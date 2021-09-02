@@ -25,6 +25,7 @@ setup(
     install_requires=[
         "bitarray",
         "numpy",
+        "redis",
         "pymmh3 @ git+ssh://git@github.com/mutalisk999/pybloomfilter.git"
     ],
     packages=['pybloomfilter']
