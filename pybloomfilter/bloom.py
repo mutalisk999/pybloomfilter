@@ -5,16 +5,11 @@
 from pybloomfilter import bloom_interface, hash
 from multiprocessing import Lock
 import bitarray
-import math
-from numpy import log as ln
 
 
 class BitArrayBloom(bloom_interface.BloomInterface):
     def __init__(self, hashCount, elemCount):
-        super().__init__()
-        self.hashCount = hashCount
-        self.elemCount = elemCount
-        self.bitArraySize = math.ceil(self.hashCount * self.elemCount / ln(2))
+        super().__init__(hashCount, elemCount)
         self.bitArray = bitarray.bitarray(self.bitArraySize)
         self.hashFunc = hash.MMH3Hash.hash
         self.bitArray.setall(0x0)
