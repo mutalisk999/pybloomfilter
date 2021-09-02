@@ -86,7 +86,10 @@ class RedisMMH3Bloom(bloom_interface.BloomInterface):
             return true
         '''
         multiply = self.redisStore.register_script(checkScript)
-        return multiply(keys=[self.redisKey], args=locations)
+        r = multiply(keys=[self.redisKey], args=locations)
+        if r is None:
+            return False
+        return True
     
     def destory(self):
         self.redisStore.delete(self.redisKey)
