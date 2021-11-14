@@ -26,7 +26,7 @@ setup(
         "bitarray",
         "numpy",
         "redis",
-        "pymmh3 @ git+ssh://git@github.com/mutalisk999/pybloomfilter.git"
+        "pymmh3 @ git+ssh://git@github.com/mutalisk999/pymmh3.git"
     ],
     packages=['pybloomfilter']
 )
